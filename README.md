@@ -2,20 +2,33 @@
 
 ## Project info
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 0c9d5995380a48c89a178ba37c40b49eebf5d0b4
 ## How can I edit this code?
 
 There are several ways of editing your application.
 
 **Use Lovable**
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 0c9d5995380a48c89a178ba37c40b49eebf5d0b4
 Changes made via Lovable will be committed automatically to this repo.
 
 **Use your preferred IDE**
 
 If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 0c9d5995380a48c89a178ba37c40b49eebf5d0b4
 Follow these steps:
 
 ```sh
@@ -56,8 +69,18 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
+<<<<<<< HEAD
+=======
+## How can I deploy this project?
+
+
+>>>>>>> 0c9d5995380a48c89a178ba37c40b49eebf5d0b4
 ## Can I connect a custom domain to my Lovable project?
 
 Yes, you can!
 
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0c9d5995380a48c89a178ba37c40b49eebf5d0b4
