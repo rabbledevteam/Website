@@ -122,7 +122,7 @@ const Blog = () => {
       </main>
 
       {/* Footer */}
-      <footer className="mt-24 border-t-4 border-foreground bg-[#013201] py-12">
+      <footer className="mt-24 border-t-4 border-foreground bg-[ #FFFFFF.] py-12">
         <div className="container mx-auto px-4">
           <div className="flex flex-col items-center gap-8">
             <img 
@@ -132,12 +132,12 @@ const Blog = () => {
             />
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8 w-full max-w-6xl text-white">
               <div>
-                <h3 className="font-bold text-xl mb-4">About</h3>
-                <p className="text-sm">RabbleHub - Where music creators connect and collaborate.</p>
+                <h3 className="font-bold text-xl text-black mb-4">About</h3>
+                <p className="text-sm text-black">RabbleHub - Where music creators connect and collaborate.</p>
               </div>
               <div>
-                <h3 className="font-bold text-xl mb-4">Quick Links</h3>
-                <ul className="space-y-2 text-sm">
+                <h3 className="font-bold text-black text-xl mb-4">Quick Links</h3>
+                <ul className="space-y-2 text-black  text-sm">
                   <li><Link to="/" className="hover:text-primary transition-colors">Home</Link></li>
                   <li><Link to="/about" className="hover:text-primary transition-colors">About</Link></li>
                   <li><Link to="/blog" className="hover:text-primary transition-colors">Blog</Link></li>
@@ -145,20 +145,20 @@ const Blog = () => {
                 </ul>
               </div>
               <div>
-                <h3 className="font-bold text-xl mb-4">Support</h3>
-                <ul className="space-y-2 text-sm">
+                <h3 className="font-bold text-black text-xl mb-4">Support</h3>
+                <ul className="space-y-2 text-black text-sm">
                   <li><a href="#" className="hover:text-primary transition-colors">Help Center</a></li>
                   <li><a href="#" className="hover:text-primary transition-colors">Privacy Policy</a></li>
                   <li><a href="#" className="hover:text-primary transition-colors">Terms of Service</a></li>
                 </ul>
               </div>
               <div>
-                <h3 className="font-bold text-xl mb-4">Newsletter</h3>
-                <p className="text-sm mb-4">Subscribe for updates</p>
+                <h3 className="font-bold text-black text-xl mb-4">Newsletter</h3>
+                <p className="text-sm text-black mb-4">Subscribe for updates</p>
                 <input 
                   type="email" 
                   placeholder="Your email" 
-                  className="w-full px-4 py-2 rounded-lg text-foreground"
+                  className="w-full text-black px-4 py-2 rounded-lg text-foreground"
                 />
               </div>
             </div>
@@ -171,5 +171,7 @@ const Blog = () => {
     </div>
   );
 };
+
+  
 
 export default Blog;

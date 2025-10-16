@@ -58,6 +58,10 @@ const Index = () => {
       </header>
 
       {/* Hero Section */}
+      {/* Development Notice */}
+  <div className="bg-yellow-200 border-t-2 border-b-2  border-black-400  text-green-800 text-center py-4 font-bold">
+    ⭐ This site is under development — coming soon!
+  </div>
       <section className="container px-4 py-20 md:py-32">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div className="space-y-8">
