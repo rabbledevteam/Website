@@ -1,139 +1,226 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { AnimatedCard } from "@/components/AnimatedCard";
 import { ScrollingLogos } from "@/components/ScrollingLogos";
 import { Typewriter } from "@/components/Typewriter";
 import logo from "@/assets/rabblehub-logo.png";
-import { Link } from "react-router-dom";
-import { 
-  Sparkles, 
-  Target, 
-  Rocket, 
-  FileText, 
-  Linkedin, 
-  Mic, 
+import FreeCounselling from "@/pages/FreeCounselling";
+
+import {
+  Sparkles,
+  Target,
+  Rocket,
+  FileText,
+  Linkedin,
+  Mic,
   Mail,
   TrendingUp,
-  Users,
-  Award,
   CheckCircle2,
-  ArrowRight
+  ArrowRight,
+  Menu,
+  X,
 } from "lucide-react";
 
-const Index = () => {
+export default function Index() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
+      {/* HEADER */}
       <header className="sticky top-0 z-50 border-b-4 border-foreground bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-24 items-center justify-between px-4">
-          <Link to="/">
-            <img 
-              src={logo} 
-              alt="Rabblehub" 
-              style={{ height: "150px", width: "auto" }} 
+        <div className="container mx-auto flex h-24 items-center justify-between px-4 md:px-8">
+          {/* Logo */}
+          <Link to="/" className="flex items-center gap-2">
+            <img
+              src={logo}
+              alt="Rabblehub"
+             style={{ height: "150px", width: "auto" }}
             />
           </Link>
-          <nav className="hidden items-center gap-6 md:flex mr-12">
-            <Link to="/" className="text-lg font-semibold text-foreground transition-colors hover:text-primary">
-              Home
-            </Link>
-            <Link to="/about" className="text-lg font-semibold text-foreground transition-colors hover:text-primary">
-              About
-            </Link>
-            <Link to="/blog" className="text-lg font-semibold text-foreground transition-colors hover:text-primary">
-              Blog
-            </Link>
-            <Link to="/contact" className="text-lg font-semibold text-foreground transition-colors hover:text-primary">
-              Contact
-            </Link>
+
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex items-center gap-6">
+           {[
+  { name: "Home", path: "/" },
+  { name: "About", path: "/about" },
+  { name: "Blog", path: "/blog" },
+  { name: "Contact", path: "/contact" },
+  { name: "Service", path: "/service" },
+  { name: "Free Counselling", path: "/free-counselling" },
+].map((item) => (
+  <Link
+    key={item.name}
+    to={item.path}
+    className="text-lg font-semibold text-foreground transition-colors hover:text-primary"
+  >
+    {item.name}
+  </Link>
+))}
+
           </nav>
-          <div className="flex items-center gap-6">
-            <Button variant="outline" size="lg" className="hidden border-2 border-foreground font-bold md:inline-flex">
+
+          {/* Desktop Buttons */}
+          <div className="hidden md:flex items-center gap-4">
+            <Button
+              variant="outline"
+              size="sm"
+              className="border-2 border-foreground font-semibold"
+            >
               For Employers
             </Button>
-            <Button size="lg" className="border-2 border-foreground bg-primary font-bold shadow-[4px_4px_0px_0px_rgba(1,50,1,1)] transition-all hover:translate-x-1 hover:translate-y-1 hover:shadow-none">
+            <Button
+              size="sm"
+              className="border-2 border-foreground bg-primary font-semibold shadow-[3px_3px_0px_0px_rgba(1,50,1,1)] transition-all hover:translate-x-1 hover:translate-y-1 hover:shadow-none"
+            >
               Get Started
             </Button>
           </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden text-foreground focus:outline-none"
+          >
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
+
+        {/* Mobile Dropdown */}
+        {isOpen && (
+          <div className="md:hidden bg-background border-t border-foreground px-4 py-4 flex flex-col items-center gap-4">
+           
+          {[
+  { name: "Home", path: "/" },
+  { name: "About", path: "/about" },
+  { name: "Blog", path: "/blog" },
+  { name: "Contact", path: "/contact" },
+  { name: "Service", path: "/service" },
+  { name: "Free Counselling", path: "/free-counselling" },
+].map((item) => (
+  <Link
+    key={item.name}
+    to={item.path}
+    className="text-lg font-semibold text-foreground transition-colors hover:text-primary"
+  >
+    {item.name}
+  </Link>
+))}
+
+            <Button
+              variant="outline"
+              size="lg"
+              className="w-full border-2 border-foreground font-semibold"
+            >
+              For Employers
+            </Button>
+            <Button
+              size="lg"
+              className="w-full border-2 border-foreground bg-primary font-semibold shadow-[4px_4px_0px_0px_rgba(1,50,1,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none"
+            >
+              Get Started
+            </Button>
+          </div>
+        )}
+
+        {/* Dev Banner */}
+        <div className="bg-yellow-200 border-t-2 border-b-2 border-black/40 text-green-800 text-center py-3 font-bold">
+          ⭐ This site is under development — coming soon!
         </div>
       </header>
 
-      {/* Hero Section */}
-      {/* Development Notice */}
-  <div className="bg-yellow-200 border-t-2 border-b-2  border-black-400  text-green-800 text-center py-4 font-bold">
-    ⭐ This site is under development — coming soon!
-  </div>
+      {/* HERO SECTION */}
       <section className="container px-4 py-20 md:py-32">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div className="space-y-8">
             <div className="inline-block rounded-full border-2 border-primary bg-primary/20 px-6 py-2 text-sm font-bold text-deep-green">
               ✨ FUTURE-PROOF YOUR CAREER
             </div>
+
             <h1 className="text-5xl font-black leading-tight text-foreground md:text-7xl">
-              <Typewriter 
-                words={["Learn.", "Prove.", "Get Hired."]} 
+              <Typewriter
+                words={["Learn.", "Prove.", "Get Hired."]}
                 className="text-gradient"
               />
             </h1>
+
             <p className="text-xl text-muted-foreground md:text-2xl">
-              You don't need another "online course." You need a system that actually gets you hired.
+              You don't need another "online course." You need a system that
+              actually gets you hired.
             </p>
+
             <ul className="space-y-4 text-lg">
-              <li className="flex items-start gap-3">
-                <CheckCircle2 className="mt-1 h-6 w-6 flex-shrink-0 text-primary" />
-                <span>Future skills you actually need – Learn in‑demand AI, B2B Sales, Marketing + more.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle2 className="mt-1 h-6 w-6 flex-shrink-0 text-primary" />
-                <span>Prove you can do it – Build real projects that become your portfolio.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle2 className="mt-1 h-6 w-6 flex-shrink-0 text-primary" />
-                <span>A marketplace that connects you with jobs – because you're here to get hired.</span>
-              </li>
+              {[
+                "Future skills you actually need – Learn in-demand AI, B2B Sales, Marketing + more.",
+                "Prove you can do it – Build real projects that become your portfolio.",
+                "A marketplace that connects you with jobs – because you're here to get hired.",
+              ].map((text, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <CheckCircle2 className="mt-1 h-6 w-6 flex-shrink-0 text-primary" />
+                  <span>{text}</span>
+                </li>
+              ))}
             </ul>
+
             <div className="flex flex-wrap gap-4">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="h-14 border-2 border-foreground bg-primary px-8 text-lg font-bold shadow-[6px_6px_0px_0px_rgba(1,50,1,1)] transition-all hover:translate-x-1 hover:translate-y-1 hover:shadow-none"
               >
-                Let's Started <ArrowRight className="ml-2" />
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="h-14 border-2 border-foreground px-8 text-lg font-bold"
-              >
-                For Employers
+                Let’s Start <ArrowRight className="ml-2" />
               </Button>
             </div>
+
             <div className="flex items-center gap-4 pt-4">
-              <div className="flex -space-x-2">
-                {[1, 2, 3, 4].map((i) => (
-                  <div key={i} className="h-10 w-10 rounded-full border-2 border-background bg-primary/30" />
+              <div className="flex -space-x-3">
+                {[44, 46, 47, 48].map((id) => (
+                  <img
+                    key={id}
+                    src={`https://randomuser.me/api/portraits/${
+                      id % 2 ? "men" : "women"
+                    }/${id}.jpg`}
+                    alt="user"
+                    className="w-10 h-10 rounded-full border-2 border-white object-cover"
+                  />
                 ))}
               </div>
               <p className="text-sm font-semibold">
-                <span className="text-2xl text-primary">1000+</span> Rabblers already hired
+                <span className="text-2xl text-primary">1000+</span> Rabblers
+                already hired
               </p>
             </div>
           </div>
-          
+
+          {/* Right - Floating Card */}
           <div className="relative">
             <div className="absolute -right-4 -top-4 h-72 w-72 animate-float rounded-full bg-primary/30 blur-3xl" />
-            <div className="absolute -bottom-4 -left-4 h-72 w-72 animate-float rounded-full bg-accent/30 blur-3xl" style={{ animationDelay: "1s" }} />
+            <div
+              className="absolute -bottom-4 -left-4 h-72 w-72 animate-float rounded-full bg-accent/30 blur-3xl"
+              style={{ animationDelay: "1s" }}
+            />
             <AnimatedCard className="relative border-primary bg-gradient-to-br from-primary/20 to-accent/20">
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
                   <Sparkles className="h-12 w-12 text-primary" />
                   <div>
-                    <p className="text-sm font-bold text-muted-foreground">RABBLE BOT</p>
+                    <p className="text-sm font-bold text-muted-foreground">
+                      RABBLE BOT
+                    </p>
                     <p className="text-2xl font-black">Your AI Career Coach</p>
+                    <a
+                      href="/chat"
+                      className="text-green-600 hover:underline"
+                    >
+                      💬 Chat Support
+                    </a>
                   </div>
                 </div>
+
                 <div className="space-y-3 rounded-2xl border-2 border-foreground bg-background p-6">
                   <p className="font-bold">💡 Ready to level up?</p>
                   <p className="text-muted-foreground">
-                    I've analyzed your profile and built you a custom roadmap. Let's get started!
+                    I’ve analyzed your profile and built you a custom roadmap.
+                    Let’s get started!
                   </p>
                   <Button className="w-full border-2 border-foreground font-bold">
                     Show My Path
@@ -144,6 +231,7 @@ const Index = () => {
           </div>
         </div>
       </section>
+    
 
       {/* Scrolling Companies */}
       <ScrollingLogos />
@@ -160,7 +248,7 @@ const Index = () => {
         </div>
 
         <div className="mt-16 grid gap-8 md:grid-cols-3">
-          <AnimatedCard delay={0}>
+          <AnimatedCard delay={0}>                       
             <div className="space-y-4">
               <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-red-500/20">
                 <span className="text-3xl">⚠️</span>
@@ -365,7 +453,7 @@ const Index = () => {
             </p>
             <Button 
               size="lg"
-              className="h-14 border-2 border-foreground bg-secondary px-8 text-lg font-bold shadow-[6px_6px_0px_0px_rgba(1,50,1,1)]"
+              className="h-14 w-full sm:w-auto border-2 border-foreground bg-secondary px-8 text-lg font-bold shadow-[6px_6px_0px_0px_rgba(1,50,1,1)]"
             >
               Unlock the Bundle - Check Pricing
             </Button>
@@ -475,7 +563,7 @@ const Index = () => {
             <div className="space-y-6">
               <div>
                 <p className="text-sm font-bold text-muted-foreground">FOR EMPLOYERS (GROWTH)</p>
-                <h3 className="mt-2 text-4xl font-black">$99</h3>
+                <h3 className="mt-2 text-4xl font-black">₹999</h3>
                 <p className="text-muted-foreground">/month</p>
               </div>
               <ul className="space-y-3">
@@ -503,7 +591,7 @@ const Index = () => {
             <div className="space-y-6">
               <div>
                 <p className="text-sm font-bold text-muted-foreground">FOR EMPLOYERS (SCALE)</p>
-                <h3 className="mt-2 text-4xl font-black">$599</h3>
+                <h3 className="mt-2 text-4xl font-black">₹1999</h3>
                 <p className="text-muted-foreground">/month</p>
               </div>
               <ul className="space-y-3">
@@ -604,4 +692,3 @@ const Index = () => {
   );
 };
 
-export default Index;
