@@ -271,16 +271,7 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Map Section */}
-      <section className="w-full">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.30596698663!2d-74.25986548248684!3d40.69714941932609!2m3!1f0!2f0!3f0!"
-          width="100%"
-          height="400"
-          className="border-0"
-          loading="lazy"
-        ></iframe>
-      </section>
+
 
       {/* ✅ Footer */}
       <footer className="border-t-4 border-foreground bg-deep-green py-12 text-black">
