@@ -622,7 +622,7 @@ useEffect(() => {
           key={s.id}
           whileHover={{ scale: 1.05, y: -8 }}
           transition={{ type: "spring", stiffness: 120, damping: 14 }}
-          className="relative rounded-3xl p-10 min-h-[420px] w-full text-center border border-gray-200 shadow-lg bg-white overflow-hidden cursor-pointer hover:shadow-[8px_8px_0px_0px_rgba(34,197,94,0.3)] hover:border-green-600 transition-all duration-300"
+          className="relative rounded-3xl p-10 min-h-[300px] w-full text-center border border-gray-200 shadow-lg bg-white overflow-hidden cursor-pointer hover:shadow-[8px_8px_0px_0px_rgba(34,197,94,0.3)] hover:border-green-600 transition-all duration-300"
         >
           {/* ICON with reflection */}
           <motion.div
@@ -696,63 +696,67 @@ useEffect(() => {
       <span className="text-primary font-bold">absolute confidence</span>.
     </p>
 
-    <div className="grid gap-8 md:grid-cols-2 max-w-4xl mx-auto">
-      {/* Students & Fresh Graduates */}
-      <div className="group transition-all duration-500 ease-out border border-gray-200 rounded-3xl shadow-md p-8 hover:-translate-y-2 hover:shadow-2xl hover:bg-gradient-to-br hover:from-blue-50 hover:to-blue-100">
-        <div className="space-y-4">
-          <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-400 to-blue-600 shadow-lg group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(37,99,235,0.6)] transition-transform duration-500">
-            <GraduationCap className="h-8 w-8 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]" />
-          </div>
-          <h3 className="text-2xl font-black">Students & Fresh Graduates</h3>
-          <p className="text-muted-foreground">
-            Confused about which career path to choose? We'll help you explore
-            options and make informed decisions.
-          </p>
-        </div>
-      </div>
+    <div className="grid gap-8 md:grid-cols-2 max-w-4xl mx-auto items-stretch">
 
-      {/* Job Seekers */}
-      <div className="group transition-all duration-500 ease-out border border-gray-200 rounded-3xl shadow-md p-8 hover:-translate-y-2 hover:shadow-2xl hover:bg-gradient-to-br hover:from-purple-50 hover:to-pink-100">
-        <div className="space-y-4">
-          <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 shadow-lg group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(192,38,211,0.6)] transition-transform duration-500">
-            <Users className="h-8 w-8 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]" />
-          </div>
-          <h3 className="text-2xl font-black">Job Seekers</h3>
-          <p className="text-muted-foreground">
-            Struggling with job applications? Get insights on resume
-            optimization, interview prep, and job search strategy.
-          </p>
-        </div>
-      </div>
-
-      {/* Career Switchers */}
-      <div className="group transition-all duration-500 ease-out border border-gray-200 rounded-3xl shadow-md p-8 hover:-translate-y-2 hover:shadow-2xl hover:bg-gradient-to-br hover:from-orange-50 hover:to-red-100">
-        <div className="space-y-4">
-          <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-orange-400 to-red-500 shadow-lg group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(249,115,22,0.6)] transition-transform duration-500">
-            <Briefcase className="h-8 w-8 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]" />
-          </div>
-          <h3 className="text-2xl font-black">Career Switchers</h3>
-          <p className="text-muted-foreground">
-            Thinking of changing industries? We'll map out a realistic
-            transition plan based on your background.
-          </p>
-        </div>
-      </div>
-
-      {/* Growth Seekers */}
-      <div className="group transition-all duration-500 ease-out border border-gray-200 rounded-3xl shadow-md p-8 hover:-translate-y-2 hover:shadow-2xl hover:bg-gradient-to-br hover:from-green-50 hover:to-emerald-100">
-        <div className="space-y-4">
-          <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-green-400 to-emerald-600 shadow-lg group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(16,185,129,0.6)] transition-transform duration-500">
-            <TrendingUp className="h-8 w-8 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]" />
-          </div>
-          <h3 className="text-2xl font-black">Growth Seekers</h3>
-          <p className="text-muted-foreground">
-            Feeling stuck in your current role? Let's identify opportunities for
-            upskilling and advancement.
-          </p>
-        </div>
-      </div>
+    
+{/* Students & Fresh Graduates */}
+<div className="group h-full flex flex-col transition-all duration-500 ease-out border border-gray-200 rounded-3xl shadow-md p-8 hover:-translate-y-2 hover:shadow-2xl hover:bg-gradient-to-br hover:from-blue-50 hover:to-blue-100">
+  <div className="space-y-4 flex-1">
+    <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-400 to-blue-600 shadow-lg group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(37,99,235,0.6)] transition-transform duration-500">
+      <GraduationCap className="h-8 w-8 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]" />
     </div>
+    <h3 className="text-2xl font-black">Students & Fresh Graduates</h3>
+    <p className="text-muted-foreground">
+      Confused about which career path to choose? We'll help you explore
+      options and make informed decisions.
+    </p>
+  </div>
+</div>
+
+{/* Job Seekers */}
+<div className="group h-full flex flex-col transition-all duration-500 ease-out border border-gray-200 rounded-3xl shadow-md p-8 hover:-translate-y-2 hover:shadow-2xl hover:bg-gradient-to-br hover:from-purple-50 hover:to-pink-100">
+  <div className="space-y-4 flex-1">
+    <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 shadow-lg group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(192,38,211,0.6)] transition-transform duration-500">
+      <Users className="h-8 w-8 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]" />
+    </div>
+    <h3 className="text-2xl font-black">Job Seekers</h3>
+    <p className="text-muted-foreground">
+      Struggling with job applications? Get insights on resume
+      optimization, interview prep, and job search strategy.
+    </p>
+  </div>
+</div>
+
+{/* Career Switchers */}
+<div className="group h-full flex flex-colmin-h-[265px] transition-all duration-500 ease-out border border-gray-200 rounded-3xl shadow-md p-8 hover:-translate-y-2 hover:shadow-2xl hover:bg-gradient-to-br hover:from-orange-50 hover:to-red-100">
+  <div className="space-y-4 flex-1">
+    <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-orange-400 to-red-500 shadow-lg group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(249,115,22,0.6)] transition-transform duration-500">
+      <Briefcase className="h-8 w-8 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]" />
+    </div>
+    <h3 className="text-2xl font-black">Career Switchers</h3>
+    <p className="text-muted-foreground">
+      Thinking of changing industries? We'll map out a realistic
+      transition plan based on your background.
+    </p>
+  </div>
+</div>
+
+{/* Growth Seekers */}
+<div className="group h-full flex flex-col min-h-[265px] transition-all duration-500 ease-out border border-gray-200 rounded-3xl shadow-md p-8 hover:-translate-y-2 hover:shadow-2xl hover:bg-gradient-to-br hover:from-green-50 hover:to-emerald-100">
+  <div className="space-y-4 flex-1">
+    <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-green-400 to-emerald-600 shadow-lg group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(16,185,129,0.6)] transition-transform duration-500">
+      <TrendingUp className="h-8 w-8 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]" />
+    </div>
+    <h3 className="text-2xl font-black">Growth Seekers</h3>
+    <p className="text-muted-foreground">
+      Feeling stuck in your current role? Let's identify opportunities for
+      upskilling and advancement.
+    </p>
+  </div>
+</div>
+
+
+</div>
 <div className="mt-16 flex justify-center">
   <div className="flex items-center gap-3 bg-[#0B132B] text-white py-4 px-6 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300">
     {/* Animated Loading Icon */}
