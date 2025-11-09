@@ -977,8 +977,7 @@ useEffect(() => {
   {/* ✅ 1. Clock Icon */}
   <div className="flex items-center gap-2 text-green-300">
     <motion.div
-      animate={{ rotate: 360 }}
-      transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+    
     >
       {/* Clock */}
       <svg
@@ -1002,8 +1001,7 @@ useEffect(() => {
   {/* ✅ 2. No Credit Card Icon (DIFFERENT) */}
   <div className="flex items-center gap-2 text-green-300">
     <motion.div
-      animate={{ rotate: 360 }}
-      transition={{ duration: 4, repeat: Infinity, ease: "linear", delay: 0.4 }}
+     
     >
       {/* Credit card with slash */}
       <svg
@@ -1027,8 +1025,7 @@ useEffect(() => {
   {/* ✅ 3. Shield Check Icon */}
   <div className="flex items-center gap-2 text-green-300">
     <motion.div
-      animate={{ rotate: 360 }}
-      transition={{ duration: 4, repeat: Infinity, ease: "linear", delay: 0.8 }}
+      
     >
       {/* Shield Check */}
       <svg
