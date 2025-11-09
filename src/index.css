@@ -115,8 +115,39 @@ All colors MUST be HSL.
   }
 }
 
+/* -------------------------------
+   GLOBAL DEFAULT 85% ZOOM
+   (Chromium + Safari)
+-------------------------------- */
 html {
-  zoom: 0.85;              /* Main zoom */
+  zoom: 0.85;
+}
+
+/* -------------------------------
+   FIREFOX FALLBACK
+   (Firefox does not support zoom)
+-------------------------------- */
+@supports not (zoom: 1) {
+  :root {
+    --page-scale: 0.85;
+  }
+
+  /* Apply scaling only to #root so layout is not stretched */
+  #root {
+    transform: scale(var(--page-scale));
+    transform-origin: top center;
+    width: calc(100% / var(--page-scale));
+    min-height: calc(100vh / var(--page-scale));
+  }
+}
+
+/* OPTIONAL:
+   If your navbar is fixed (position: fixed),
+   add padding so content does not hide behind it.
+   Adjust the 72px to your navbar height.
+*/
+body {
+  padding-top: 72px;
 }
 
 @keyframes float {
