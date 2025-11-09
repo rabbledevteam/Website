@@ -115,7 +115,15 @@ All colors MUST be HSL.
   }
 }
 
-html { zoom: 0.85 ; }
+html {
+  zoom: 0.85;              /* Main zoom */
+  transform: scale(0.85);  /* Support for Firefox */
+  transform-origin: 0 0;   /* Anchor top-left */
+}
+body {
+  width: calc(100% / 0.85); /* Fix content width for transform scaling */
+}
+
 
 @keyframes float {
   0%, 100% {
@@ -183,3 +191,9 @@ html { zoom: 0.85 ; }
   animation: pulse-dot 3s ease-in-out infinite;
 }
 
+@font-face {
+  font-family: 'ArialUnicode';
+  src: url('/src/assets/fonts/ArialUnicodeMS.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}

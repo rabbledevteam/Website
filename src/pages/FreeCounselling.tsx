@@ -304,20 +304,19 @@ useEffect(() => {
                 ✨ 100% Free · Expert-Led · 1:1 Session
               </div>
 <h1
-  className="text-4xl md:text-6xl lg:text-7xl font-black text-center text-foreground whitespace-nowrap"
-  style={{ fontFamily: "Arial Unicode MS", marginBottom: "0.2rem" }} 
+  className="text-left md:text-center text-4xl font-arialUnicode md:text-6xl lg:text-7xl font-black text-foreground -mb-2 whitespace-nowrap"
 >
   Lost in your career?
 </h1>
 
 <h1
-  className="text-4xl md:text-6xl lg:text-7xl font-black text-center whitespace-nowrap"
-  style={{ fontFamily: "Arial Unicode MS", marginTop: "0.1rem" }}
+  className="text-left md:text-center font-arialUnicode text-4xl md:text-6xl lg:text-7xl font-black whitespace-nowrap mb-1"
 >
-  <span style={{ color: "#038003" }}>
+  <span style={{ color: '#038003' }}>
     Speak to an expert for free!
   </span>
 </h1>
+
 
 
               <p className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
@@ -328,8 +327,8 @@ useEffect(() => {
 
               {/* BUTTON */}
               <button
-  style={{ color: "#00D200" }}
-  className="relative group bg-gradient-to-r from-green-400 to-green-500 text-white font-semibold px-8 py-4 rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(72,255,125,0.4)]"
+  style={{ color: "#038003" }}
+  className="relative group bg-gradient-to-r from-green-600 to-green-800 text-white font-semibold px-8 py-4 rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(72,255,125,0.4)]"
 >
   <span className="flex items-center gap-2 text-white z-10 relative">
 
@@ -593,6 +592,7 @@ useEffect(() => {
   {/* What You'll Get Section */}
 
   <section className="container  px-4 py-20 text-center relative">
+       
     {/* ⭐ Star with green border and white fill */}
     <div className="flex justify-center mb-6">
      <Star 
@@ -602,6 +602,9 @@ useEffect(() => {
       strokeWidth={2.5}
     />
       </div>
+          <h2 className="text-4xl font-black text-center mb-4 md:text-5xl">
+          What You'll Get
+        </h2>
     
 <p className="text-center text-xl text-muted-foreground mb-16 max-w-2xl mx-auto">
   This isn't just a conversation. It's a 30-minute transformation that could
@@ -777,23 +780,23 @@ useEffect(() => {
   <div className="mx-auto max-w-6xl">
     {/* Header */}
     <div className="text-center mb-16">
-      <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-green-100 mb-6 shadow-sm">
-        {/* Realistic Question Icon */}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={2}
-          stroke="#00D200"
-          className="h-8 w-8"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M12 6v6m0 4h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"
-          />
-        </svg>
-      </div>
+<div className="inline-flex h-16 w-16 items-center justify-center mb-6">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="#00D200"
+    strokeWidth="2"
+    className="h-15 w-15"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M9.75 9a2.25 2.25 0 1 1 4.5 0c0 1.696-2.25 2.25-2.25 4.5"
+    />
+    <circle cx="12" cy="18" r="0.8" fill="#00D200" />
+  </svg>
+</div>
       <h2 className="text-4xl font-black mb-4 md:text-5xl">
         Frequently Asked Questions
       </h2>
