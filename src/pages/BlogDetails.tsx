@@ -1,46 +1,4 @@
-// // src/pages/BlogDetails.tsx
-// import { useParams, Link } from "react-router-dom";
-// import { blogPosts } from "@/data/blogs";
-// import { Button } from "@/components/ui/button";
 
-// const BlogDetails = () => {
-//   const { id } = useParams<{ id: string }>();
-//   const post = blogPosts.find((b) => b.id === Number(id));
-
-//   if (!post) {
-//     return (
-//       <div className="min-h-screen flex items-center justify-center p-8">
-//         <div className="text-center">
-//           <h2 className="text-2xl font-bold">Blog not found</h2>
-//           <Link to="/blog">
-//             <Button className="mt-6 bg-green-700 text-white">Back to Blogs</Button>
-//           </Link>
-//         </div>
-//       </div>
-//     );
-//   }
-
-//   return (
-//     <main className="min-h-screen bg-white py-16 px-4">
-//       <div className="max-w-4xl mx-auto">
-//         {post.image && <img src={post.image} alt={post.title} className="w-full h-72 object-cover rounded-xl mb-8 shadow-md" />}
-//         <div className="flex items-center gap-3 text-muted-foreground mb-4">
-//           <span className="text-sm font-semibold">{post.date}</span>
-//         </div>
-//         <h1 className="text-4xl font-extrabold mb-6 text-green-700">{post.title}</h1>
-//         <article className="prose max-w-none text-gray-700 whitespace-pre-line">{post.fullContent}</article>
-
-//         <div className="mt-8">
-//           <Link to="/blog">
-//             <Button className="bg-green-700 text-white">← Back to Blogs</Button>
-//           </Link>
-//         </div>
-//       </div>
-//     </main>
-//   );
-// };
-
-// export default BlogDetails;
 
 import { useParams, Link } from "react-router-dom";
 import { blogPosts } from "@/data/blogs";

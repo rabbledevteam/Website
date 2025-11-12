@@ -22,6 +22,7 @@ import {
   Menu,
   X,
 } from "lucide-react";
+import { Header } from "@/components/header";
 
 const Service = () => {
   const [theme] = useState<"minimal" | "dynamic">("dynamic");
@@ -121,100 +122,8 @@ const Service = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white text-gray-900 transition-all duration-700">
-
-      {/* ✅ Navbar */}
-      <header
-        className={`sticky top-0 z-50 backdrop-blur-md border-b-2 ${
-          theme === "dynamic"
-            ? "bg-white/80 border-green-500"
-            : "bg-white border-gray-200"
-        }`}
-      >
-        <div className="max-w-7xl mx-auto flex items-center justify-between h-20 px-6">
-          {/* Logo */}
-          <Link to="/">
-            <img
-              src={logo}
-              alt="RabbleHub Logo"
-              style={{ height: "150px", width: "auto" }}
-            />
-          </Link>
-
-           <nav className="hidden md:flex items-center gap-6">
-            <Link to="/" className="text-lg font-semibold hover:text-primary">Home</Link>
-            <Link to="/about" className="text-lg font-semibold hover:text-primary">About</Link>
-            <Link to="/blog" className="text-lg font-semibold hover:text-primary">Blog</Link>
-            <Link to="/contact" className="text-lg font-semibold hover:text-primary">Contact</Link>
-            <Link to="/service" className="text-lg font-semibold hover:text-primary">Service</Link>
-             <Link to="/free-counselling" className="text-lg font-semibold text-foreground transition-colors hover:text-primary">
-              Free Counselling
-            </Link>
-          </nav>
-
-
-          {/* Desktop Buttons */}
-          <div className="hidden md:flex gap-3">
-            <Button
-              size="sm"
-              variant="outline"
-              className="border-green-700 text-green-700 font-bold"
-            >
-              For Employers
-            </Button>
-            <Button
-              size="sm"
-              className="bg-green-700 hover:bg-green-800 text-white font-bold"
-            >
-              Get Started
-            </Button>
-          </div>
-
-          {/* Mobile Menu Toggle */}
-          <button
-            className="md:hidden text-green-700"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
-        </div>
-
-        {/* ✅ Mobile Dropdown */}
-        {isOpen && (
-          <div className="md:hidden bg-white border-t border-gray-200 px-6 py-4 flex flex-col gap-4 text-center">
-            {["Home", "About", "Service", "Blog", "Contact" , "Free Counselling"].map((item) => (
-              <Link
-                key={item}
-                to={`/${item.toLowerCase()}`}
-                onClick={() => setIsOpen(false)}
-                className="font-semibold text-gray-700 hover:text-green-700"
-              >
-                {item}
-              </Link>
-            ))}
-            <div className="flex flex-col gap-3 mt-4">
-              <Button
-                size="sm"
-                variant="outline"
-                className="border-green-700 text-green-700 font-bold"
-              >
-                For Employers
-              </Button>
-              <Button
-                size="sm"
-                className="bg-green-700 hover:bg-green-800 text-white font-bold"
-              >
-                Get Started
-              </Button>
-            </div>
-          </div>
-        )}
-      </header>
-
-      {/* ✅ Under Development Bar */}
-      <div className="bg-yellow-200 border-t-2 border-b-2 border-yellow-400 text-green-800 text-center py-3 font-bold">
-        ⭐ This site is under development — coming soon!
-      </div>
+   <div className="min-h-screen bg-background">
+ <Header/>
             
  <section
   className="py-20 px-6 flex flex-col md:flex-row items-center gap-12 container mx-auto relative">

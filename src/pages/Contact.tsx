@@ -17,139 +17,14 @@ import {
   Menu,
   X,
 } from "lucide-react";
+import { Header } from "@/components/header";
 
 const Contact = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-background">
-      {/* ✅ Header Section */}
-      <header className="sticky top-0 z-50 border-b-4 border-foreground bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-8">
-          {/* Logo */}
-          <Link to="/" className="flex-shrink-0">
-            <img src={logo} alt="Rabblehub" style={{ height: "150px", width: "auto" }} />
-          </Link>
-
-          {/* Desktop Navbar */}
-          <nav className="hidden md:flex items-center gap-6 mr-12">
-            <Link to="/" className="text-lg font-semibold text-foreground transition-colors hover:text-primary">
-              Home
-            </Link>
-            <Link to="/about" className="text-lg font-semibold text-foreground transition-colors hover:text-primary">
-              About
-            </Link>
-            <Link to="/blog" className="text-lg font-semibold text-foreground transition-colors hover:text-primary">
-              Blog
-            </Link>
-            <Link to="/contact" className="text-lg font-semibold text-foreground transition-colors hover:text-primary">
-              Contact
-            </Link>
-            <Link to="/service" className="text-lg font-semibold text-foreground transition-colors hover:text-primary">
-              Service
-            </Link>
-             <Link to="/free-counselling" className="text-lg font-semibold text-foreground transition-colors hover:text-primary">
-              Free Counselling
-            </Link>
-
-          </nav>
-
-          {/* Desktop Buttons */}
-          <div className="hidden md:flex items-center gap-4">
-            <Button variant="outline" size="sm" className="border-2 border-foreground font-bold">
-              For Employers
-            </Button>
-            <Button
-              size="sm"
-              className="border-2 border-foreground bg-primary font-bold shadow-[4px_4px_0px_0px_rgba(1,50,1,1)] 
-              transition-all hover:translate-x-1 hover:translate-y-1 hover:shadow-none"
-            >
-              Get Started
-            </Button>
-           
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-foreground"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
-        </div>
-
-        {/* ✅ Mobile Menu Dropdown */}
-        {isOpen && (
-          <div className="md:hidden bg-background border-t border-foreground px-4 py-4 flex flex-col items-center gap-4">
-            <Link
-              to="/"
-              className="text-lg font-semibold text-foreground hover:text-primary"
-              onClick={() => setIsOpen(false)}
-            >
-              Home
-            </Link>
-            <Link
-              to="/about"
-              className="text-lg font-semibold text-foreground hover:text-primary"
-              onClick={() => setIsOpen(false)}
-            >
-              About
-            </Link>
-            <Link
-              to="/blog"
-              className="text-lg font-semibold text-foreground hover:text-primary"
-              onClick={() => setIsOpen(false)}
-            >
-              Blog
-            </Link>
-            <Link
-              to="/contact"
-              className="text-lg font-semibold text-foreground hover:text-primary"
-              onClick={() => setIsOpen(false)}
-            >
-              Contact
-            </Link>
-            <Link
-              to="/service"
-              className="text-lg font-semibold text-foreground hover:text-primary"
-              onClick={() => setIsOpen(false)}
-            >
-              Service
-            </Link>
-            <Link
-              to="/service"
-              className="text-lg font-semibold text-foreground hover:text-primary"
-              onClick={() => setIsOpen(false)}
-            >
-              Free Counselling
-            </Link>
-
-            {/* Buttons inside Mobile Menu */}
-            <div className="flex flex-col gap-3 mt-3 w-full">
-              <Button
-                variant="outline"
-                size="sm"
-                className="border-2 border-foreground font-bold"
-              >
-                For Employers
-              </Button>
-              <Button
-                size="sm"
-                className="border-2 border-foreground bg-primary text-white font-bold shadow-[4px_4px_0px_0px_rgba(1,50,1,1)] 
-                transition-all hover:translate-x-1 hover:translate-y-1 hover:shadow-none"
-              >
-                Get Started
-              </Button>
-            </div>
-          </div>
-        )}
-
-        {/* ✅ Development Notice */}
-        <div className="bg-yellow-200 border-t-2 border-b-2 border-black/40 text-green-800 text-center py-3 font-bold">
-          ⭐ This site is under development — coming soon!
-        </div>
-      </header>
-
+      <Header/>
       {/* ✅ Hero Section */}
       <section className="relative bg-gradient-to-br from-muted/50 to-background py-20 md:py-32">
         <div className="container px-4 text-center">

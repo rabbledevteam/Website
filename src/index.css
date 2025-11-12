@@ -147,7 +147,7 @@ html {
    Adjust the 72px to your navbar height.
 */
 body {
-  padding-top: 72px;
+  /* padding-top: 72px; */
 }
 
 @keyframes float {
@@ -222,3 +222,4 @@ body {
   font-weight: 400;
   font-style: normal;
 }
+

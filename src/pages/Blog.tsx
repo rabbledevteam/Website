@@ -5,6 +5,7 @@ import { Calendar, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/rabblehub-logo.png";
 import { blogPosts } from "@/data/blogs";
+import { Header } from "@/components/header";
 
 const Blog = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,57 +16,7 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="sticky top-0 z-50 border-b-4 border-foreground bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto flex h-24 items-center justify-between px-4 md:px-8">
-          <Link to="/">
-            <img src={logo} alt="Rabblehub" className="h-16 md:h-20 w-auto" />
-          </Link>
-
-          {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-6">
-            <Link to="/" className="text-lg font-semibold hover:text-primary">Home</Link>
-            <Link to="/about" className="text-lg font-semibold hover:text-primary">About</Link>
-            <Link to="/blog" className="text-lg font-semibold hover:text-primary">Blog</Link>
-            <Link to="/contact" className="text-lg font-semibold hover:text-primary">Contact</Link>
-            <Link to="/service" className="text-lg font-semibold hover:text-primary">Service</Link>
-             <Link to="/free-counselling" className="text-lg font-semibold text-foreground transition-colors hover:text-primary">
-              Free Counselling
-            </Link>
-          </nav>
-
-          {/* Buttons */}
-          <div className="hidden md:flex items-center gap-4">
-            <Button size="sm" variant="outline" className="border-2 border-foreground font-bold">For Employers</Button>
-            <Button size="sm" className="border-2 border-foreground bg-primary font-bold shadow-[4px_4px_0px_0px_rgba(1,50,1,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none">Get Started</Button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button onClick={() => setIsOpen(!isOpen)} className="md:hidden flex items-center justify-center text-foreground">
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
-        </div>
-
-        {/* Mobile Dropdown Menu */}
-        {isOpen && (
-          <div className="md:hidden bg-background border-t border-foreground px-4 py-4 flex flex-col items-center gap-4">
-            <Link to="/" className="font-semibold" onClick={() => setIsOpen(false)}>Home</Link>
-            <Link to="/about" className="font-semibold" onClick={() => setIsOpen(false)}>About</Link>
-            <Link to="/blog" className="font-semibold" onClick={() => setIsOpen(false)}>Blog</Link>
-            <Link to="/contact" className="font-semibold" onClick={() => setIsOpen(false)}>Contact</Link>
-            <Link to="/service" className="font-semibold" onClick={() => setIsOpen(false)}>Service</Link>
-            <Link to="/service" className="font-semibold" onClick={() => setIsOpen(false)}>Free Counselling</Link>
-                      
-            <Button variant="outline" size="sm" className="border-2 border-foreground font-bold w-full">For Employers</Button>
-            <Button size="sm" className="border-2 border-foreground bg-primary font-bold w-full shadow-[4px_4px_0px_0px_rgba(1,50,1,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none">Get Started</Button>
-          </div>
-        )}
-
-        {/* Under Development Line */}
-        <div className="bg-yellow-200 border-t-2 border-b-2 border-black/40 text-green-800 text-center py-3 font-bold">
-          ⭐ This site is under development — coming soon!
-        </div>
-      </header>
+    <Header/>
 
       {/* Blog Listing */}
       <main className="container mx-auto px-4 py-16">
